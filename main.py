@@ -24,6 +24,7 @@ tweets = api.user_timeline(count=5)
 bot = telegram.Bot(token=bot_token)
 
 # Send your latest tweets to your Telegram channel
+
 for tweet in tweets:
     message = f'{tweet.author.name} (@{tweet.author.screen_name}):\n{tweet.text}'
     bot.send_message(chat_id=chat_id, text=message)
